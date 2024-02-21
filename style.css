@@ -1,0 +1,104 @@
+body, html {
+    height: 100%;
+    width: 100%;
+  }
+
+img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .txt {
+    position:absolute;
+    width: 15%;
+    right: 5%;
+    top: 5%;
+    font-size: 2em;    
+    word-wrap: break-word;
+    color: red;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+.inventory {
+    position:absolute;
+    left: 3%;
+    bottom: 1%;
+    font-size: 2em;    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.menu {
+    position:absolute;
+    width: 100%;
+    bottom: 5%;
+    /*right:50%;  Positions 50% from right (right edge will be at center) */
+    /*margin-right:200px;  Positions 200px to the left of center */
+    font-size: 3em;    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    display: flex;    
+    justify-content: space-evenly; 
+}
+
+.menu-item:hover {
+    /*border-style: solid;*/
+    text-shadow: 0 0 3px #008cff;
+    cursor: pointer;
+}
+
+
+.obj:hover { 
+    cursor: pointer;
+}
+.obj-tree{
+    position:absolute;
+    top: 5%;
+    left: 2%;
+    width: 16%;
+    height: 80%;
+    /* border-style: dashed; */
+}
+.obj-tree2{
+    position:absolute;
+    top: 8%;
+    right: 1%;
+    width: 17%;
+    height: 70%;
+}
+
+.obj-way{
+    position:absolute;
+    top: 65%;
+    left: 50%;
+    width: 7%;
+    height: 22%;
+}
+
+
+
+  .ani {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    75% {
+      font-size: 300%;
+      margin-left: 25%;
+      width: 150%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+  
