@@ -1,6 +1,8 @@
 body, html {
     height: 100%;
     width: 100%;
+    position:relative;
+    user-select: none;
   }
 
 img {
@@ -11,34 +13,69 @@ img {
     background-size: cover;
   }
 
+.overlay {
+    position: absolute;
+    text-align: center;
+    color: aliceblue;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    font-size: 5vh;    
+    background-color: rgba(0,0,0);
+    opacity: 80%;
+    z-index: 9999;
+    text-shadow: -1px -1px 0 #2f53cb, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
-  .txt {
+.txt {
+    cursor: pointer;
     position:absolute;
+    /*pointer-events: none;   damit man durchklicken kann auf das darunter */
+    animation: fadeInFromNone 2s ease-in;
     width: 15%;
+    /*height: 80%;*/
     right: 5%;
     top: 5%;
-    font-size: 2em;    
+    font-size: 3vh;    
     word-wrap: break-word;
+    overflow-y: auto;
     color: red;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
 
 .inventory {
-    position:absolute;
+    cursor: pointer;
+    color: red;
+    position: absolute;
     left: 3%;
-    bottom: 1%;
-    font-size: 2em;    
+    top: 1%;
+    font-size: 3vh;    
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
 .menu {
     position:absolute;
     width: 100%;
     bottom: 5%;
+    color: aliceblue;
     /*right:50%;  Positions 50% from right (right edge will be at center) */
     /*margin-right:200px;  Positions 200px to the left of center */
-    font-size: 3em;    
+    font-size: 4vh;    
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
     display: flex;    
     justify-content: space-evenly; 
 }
@@ -79,26 +116,27 @@ img {
 
 
 
-  .ani {
-    animation-duration: 3s;
-    animation-name: slidein;
-  }
-  
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-  
-    75% {
-      font-size: 300%;
-      margin-left: 25%;
-      width: 150%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
+/*** *** ***  inventory item add - animation*/
+.ani {
+animation-duration: 2s;
+animation-name: slidein;
+}
+
+@keyframes slidein {
+from {
+    margin-left: 100%;
+    width: 300%;
+}
+
+75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+}
+
+to {
+    margin-left: 0%;
+    width: 100%;
+}
+}
   
